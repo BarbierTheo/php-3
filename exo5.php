@@ -19,16 +19,14 @@
 
     <style>
         * {
-            font-family: 'Courier New', Courier, monospace;
+            font-family:Verdana, Geneva, Tahoma, sans-serif;
+            font-weight: bold;
         }
         header {
             display: flex;
-            align-items: center;
-            font-size: 1rem;
-            justify-content: center;
-            margin-bottom: 2em;
-            background: #000;
-            color: #fff;
+            font-size: 1.3rem;
+            margin-left: 10rem;
+            color: red;
             min-height: 10vh;
             text-align: center;
         }
@@ -39,7 +37,7 @@
             grid-template-columns: repeat(7, 1fr);
             grid-gap: 1em;
             margin: 0 auto;
-            max-width: 64em;
+            max-width: 32em;
             padding: 0;
         }
 
@@ -61,9 +59,7 @@
         }
 
         ol.day-grid li {
-            background-color: white;
-            border: gray 1px solid; 
-            height: 12vw;
+            height: 6vw;
             max-height: 125px;
         }
 
@@ -92,13 +88,15 @@
         }
 
         .day-grid > li:nth-child(7n), .day-grid > li:nth-child(7n-1) {
-            background-color:rgb(170, 170, 170);
+            color : gray;
         }
 
         /* pour sélectionner la 7ème colonne dans day-grid */
 
         .special {
-            background-color: cadetblue !important;
+            color : white !important;
+            background-color: red;
+            border-radius: 1rem;
         }
         
     </style>
@@ -116,36 +114,34 @@
 
         <ul class="weekdays">
             <li>
-                <abbr>Lundi</abbr>
+                <abbr>L</abbr>
             </li>
             <li>
-                <abbr>Mardi</abbr>
+                <abbr>M</abbr>
             </li>
             <li>
-                <abbr>Mercredi</abbr>
+                <abbr>M</abbr>
             </li>
             <li>
-                <abbr>Jeudi</abbr>
+                <abbr>J</abbr>
             </li>
             <li>
-                <abbr>Vendredi</abbr>
+                <abbr>V</abbr>
             </li>
             <li>
-                <abbr>Samedi</abbr>
+                <abbr>S</abbr>
             </li>
             <li>
-                <abbr>Dimanche</abbr>
+                <abbr>D</abbr>
             </li>
         </ul>
 
         <ol class="day-grid">
-            <!-- <li>29</li> -->
              <?php 
              for ($i = 1; $i <= $totalDays; $i++) {
                 
                 // bien penser syntaxe c'est pas "condition ? echo : echo;" mais plutôt placer la ternaire dans l'echo
                 echo ($i !== $specialDay ? "<li class='days'>$i</li>" : "<li class='days special'>$i</li>");
-
 
              }
              ?>
